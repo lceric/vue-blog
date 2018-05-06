@@ -4,8 +4,12 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 
+import 'normalize.css'
+
 import mavonEditor from 'mavon-editor'
 import 'mavon-editor/dist/css/index.css'
+
+import '@/assets/stylesheet/_index.scss'
 // use
 Vue.use(mavonEditor)
 
