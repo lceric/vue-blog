@@ -6,10 +6,15 @@ import router from './router'
 
 import 'normalize.css'
 
+import AtComponents from 'at-ui'
+import 'at-ui-style'
+
 import mavonEditor from 'mavon-editor'
 import 'mavon-editor/dist/css/index.css'
 
 import '@/assets/stylesheet/_index.scss'
+
+Vue.use(AtComponents)
 // use
 Vue.use(mavonEditor)
 
