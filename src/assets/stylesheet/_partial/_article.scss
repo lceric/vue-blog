@@ -1,0 +1,58 @@
+.article-wrapper {
+    margin-top: 100px;
+}
+
+.article__header {
+    .article__title {
+        // text-align: left;
+        // font-family: Gotham-Book;
+        font-size: 28px;
+        color: #242f35;
+        margin: .5em 0;
+        font-weight: 400;
+        line-height: 1;
+    }
+    .mark__item {
+        margin-right: 16px;
+    }
+}
+
+.article__editor {
+    margin-top: 6vh;
+    &.v-note-wrapper {
+        background: transparent;
+        z-index: 200;
+        .v-note-panel {
+            border: 0;
+            .v-note-show.single-show {
+                flex: 1; // width: calc(100% - 250px);
+                margin-right: 266px;
+                @media screen and (max-width: 960px) {
+                    margin-right: 0;
+                }
+            }
+            .v-note-navigation-wrapper {
+                // flex: 1;
+                margin-left: 16px;
+                border: none; // position: fixed;
+                background: transparent; // top: 100px;
+                // right: 16px;
+                @media screen and (max-width: 960px) {
+                    display: none;
+                }
+            }
+            .v-note-navigation-close {
+                display: none;
+            }
+        }
+    }
+    &.v-note-wrapper .v-note-panel .v-note-show .v-show-content,
+    &.v-note-wrapper .v-note-panel .v-note-show .v-show-content-html {
+        background: transparent;
+        padding: 0;
+    }
+}
+
+.v-note-wrapper .v-note-panel .v-note-navigation-wrapper {
+    background: transparent;
+}

@@ -1,0 +1,46 @@
+[
+  {
+    "data": [{
+      "label": "名字",
+      "value": "李超",
+      "url": ""
+    }, {
+      "label": "年龄",
+      "value": "1993.10",
+      "url": ""
+    }, {
+      "label": "职业",
+      "value": "前端开发",
+      "url": ""
+    }, {
+      "label": "Github",
+      "value": "ChaoLeer",
+      "url": "https://github.com/ChaoLeer"
+    }, {
+      "label": "职业",
+      "value": "前端开发",
+      "url": ""
+    }, {
+      "label": "站点",
+      "value": "strun",
+      "url": "https://strun.club/newSite/index.html#/"
+    }, {
+      "label": "技能",
+      "value": "前端开发，前端开发，前端开发，前端开发，前端开发，前端开发，前端开发，前端开发，前端开发前端开发",
+      "url": ""
+    }],
+    "author": {
+      "avatar": "",
+      "cover": {
+        "url": "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1528650258799&di=e76516dc74935ab00441d2e2f5e3dd29&imgtype=0&src=http%3A%2F%2Fimg.mp.itc.cn%2Fupload%2F20161103%2Fd8195318cd334f4db75fd2294f663beb_th.jpg",
+        "width": "280px",
+        "height": "200px",
+        "shape": "100px"
+      }
+    },
+    "discription": [
+      "",
+      ""
+    ]
+  }
+]

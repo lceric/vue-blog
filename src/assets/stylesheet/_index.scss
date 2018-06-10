@@ -1,10 +1,14 @@
 @import '_var';
 @import '_extend';
 @import './_partial/_header';
+@import './_partial/_article';
+@import './_partial/_footer';
 html,
 body,
 #app {
-    height: 100%
+    border-top: 1px solid transparent;
+    min-width: 640px;
+    height: 100vh;
 }
 
 body {
@@ -13,50 +17,92 @@ body {
     -webkit-text-size-adjust: 100%;
 }
 
-.outer {
-    // clearfix();
-    // max-width: ($column-width + $gutter-width) * $columns + $gutter-width;
-    margin: 0 auto;
-    padding: 0 $gutter-width;
-}
-
 // .inner
 //   column(columns)
 .left,
-.alignleft {
+.fl {
     float: left
 }
 
 .right,
-.alignright {
+.fr {
     float: right
 }
 
-.clear {
-    clear: both
+.clearfix:after {
+    content: '';
+    display: table;
+    clear: both;
 }
 
-#container {
-    position: relative
+.st-main {
+  margin-top: $header + 20px;
+  width: 100%;
+  min-height: 100%;
+  transition: margin .3s cubic-bezier(.17, .67, .83, .67);
 }
 
-.mobile-nav-on {
-    overflow: hidden
+.st-header-fixed+.st-main {
+    border-top: 1px solid transparent;
+    margin-top: 120px;
 }
 
-#wrap {
-    height: 100%;
+.st-header-hide+.st-main {
+    // margin-top: 20px;
+}
+
+.st-wapper {
     width: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    transition: 0.2s ease-out;
-    z-index: 1;
-    background: $color-background;
-    @at-root .mobile-nav-on & {
-        left: $mobile-nav-width;
+    max-width: 1300px;
+    margin-right:auto; // background-color: #fff;
+    margin-left: auto;
+    @media screen and (min-width: 1280px) {
+        width: 1250px;
+    }
+    @media screen and (min-width: 980px) {
+        width: 950px;
+    }
+    @media screen and (min-width: 736px) {
+        width: 100%;
     }
 }
-.inner {
-    width: 100%;
+
+.type-list {
+  padding: 16px;
+  li {
+    animation: articleIn .2s ease-in-out;
+    &:hover {
+      color: #000;
+      font-weight: 700;
+    }
+    &.actived {
+      color: #fff;
+      font-weight: 400;
+      border-color: #222;
+      background-color: #222;
+    }
+    padding: 0 12px;
+    margin-right: 15px;
+    margin-bottom: 16px;
+    display: inline-block;
+    color: #333;
+    font-size: 14px;
+    line-height: 28px;
+    text-align: center;
+    border-radius: 15px;
+    cursor: pointer;
+    border: 1px solid transparent;
+    transition: width .2s ease;
+    &.list__item {
+      border-color: #cccccb;
+    }
+    &.small {
+      font-size: 12px;
+    }
+  }
+  &.max-height {
+    max-height: 60vh;
+    overflow-y: auto;
+    margin-right: -16px;
+  }
 }

@@ -1,0 +1,18 @@
+@font-face {
+    font-family: 'Gotham-Book';
+    src: url('../fonts/gothambook.otf');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+  font-family: 'Gotham-Medium';
+  src: url('../fonts/Gotham-Medium.woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+.bg {
+  background-image: url('../img/noise.png');
+  background-repeat:  repeat;
+}

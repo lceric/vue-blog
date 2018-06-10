@@ -1,16 +1,19 @@
 <template>
   <div id="app">
     <l-header></l-header>
-    <router-view></router-view>
+    <router-view class="st-wapper"></router-view>
+    <l-footer></l-footer>
   </div>
 </template>
 
 <script>
 import LHeader from '@/components/Header.vue'
+import LFooter from '@/components/Footer.vue'
 export default {
   name: 'App',
   components: {
-    LHeader
+    LHeader,
+    LFooter
   }
 }
 </script>
