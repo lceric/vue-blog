@@ -17,16 +17,16 @@
       "value": "ChaoLeer",
       "url": "https://github.com/ChaoLeer"
     }, {
-      "label": "职业",
-      "value": "前端开发",
-      "url": ""
-    }, {
       "label": "站点",
       "value": "strun",
       "url": "https://strun.club/newSite/index.html#/"
     }, {
       "label": "技能",
-      "value": "前端开发，前端开发，前端开发，前端开发，前端开发，前端开发，前端开发，前端开发，前端开发前端开发",
+      "value": "前端开发",
+      "url": ""
+    }, {
+      "label": "简介",
+      "value": "基于vue技术栈的前端基线版本开发，崇尚干净的代码，清晰地逻辑，优雅的设计，抖一下机灵，写出更好的APP",
       "url": ""
     }],
     "author": {

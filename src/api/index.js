@@ -1,7 +1,7 @@
 import axios from 'axios'
 const IMG_SOURCE_SERVER = 'http://118.24.53.34:8888/upload/upload1.php'
 const instance = axios.create({
-  baseURL: '/api'
+  baseURL: 'http://localhost:80/api'
   // headers: {
   //   'USERID': 'b91aacd034c311e7bec600163e055a18'
   //   // 'Content-Type': 'application/json;charset=utf-8',
@@ -24,6 +24,10 @@ export function getArticleById (id) {
 // 获取code
 export function getType (type) {
   return instance.get(`/code/type/${type}`)
+}
+// 新增文章
+export function insertArticle (params) {
+  return instance.post(`/article/`, params)
 }
 // 获取个人信息
 export function getMineInfo () {

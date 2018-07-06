@@ -56,3 +56,38 @@
 .v-note-wrapper .v-note-panel .v-note-navigation-wrapper {
     background: transparent;
 }
+.at-input--error {
+    .at-select__selection,
+    .at-input__original {
+        border-color: #FF4949;
+    }
+}
+.st-modify__wrapper {
+    padding: 20px;
+    .st-modify__header {
+        padding: 20px 0;
+        display: flex;
+        align-items: center;
+        .at-input {
+            flex: 1;
+            margin-left: 12px;
+            .at-input__original {height: 28px;
+            }
+        }
+    }
+    .st-modify__tag {
+        display: flex;
+        margin-bottom: 20px;
+        align-items: center;
+        .at-select {
+            width: 260px;
+            margin-left: 12px;
+        }
+    }
+    .mavon-editor {
+        min-height: calc(100vh - 126px);
+    }
+    .v-note-wrapper {
+        z-index: 200;
+    }
+}
