@@ -3,6 +3,7 @@ import Router from 'vue-router'
 const Main = () => import('@/views/Main')
 const Article = () => import('@/views/Article')
 const About = () => import('@/views/About')
+const Modify = () => import('@/views/Modify')
 
 Vue.use(Router)
 
@@ -17,6 +18,11 @@ export default new Router({
       path: '/article',
       name: 'Article',
       component: Article
+    },
+    {
+      path: '/modify',
+      name: 'Modify',
+      component: Modify
     },
     {
       path: '/about',

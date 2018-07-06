@@ -1,6 +1,7 @@
 import axios from 'axios'
+const IMG_SOURCE_SERVER = 'http://118.24.53.34:8888/upload/upload1.php'
 const instance = axios.create({
-  baseURL: 'http://118.24.53.34:8888/api'
+  baseURL: '/api'
   // headers: {
   //   'USERID': 'b91aacd034c311e7bec600163e055a18'
   //   // 'Content-Type': 'application/json;charset=utf-8',
@@ -27,4 +28,8 @@ export function getType (type) {
 // 获取个人信息
 export function getMineInfo () {
   return axios.get('static/json/data.json')
+}
+// 上传图片
+export function uploadImg (params) {
+  return axios.post(IMG_SOURCE_SERVER, params)
 }
