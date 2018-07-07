@@ -24,6 +24,10 @@
         active-class="is-actived" exact
         class="nav-link" :to="menu.path">{{menu.text}}</router-link>
     </nav>
+    <div class="st-user">
+      <span>ChaoLee</span>
+      <router-link to="/login">登录</router-link>
+    </div>
   </header>
 </template>
 

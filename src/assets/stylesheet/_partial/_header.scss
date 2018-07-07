@@ -202,8 +202,8 @@
 .st-header {
   display: flex;
   height: $header;
-  justify-content: center;
-  background-color: #387ce7;
+  justify-content: space-between;
+  background-color: $stbg;
   position: fixed;
   top: 0;
   z-index: 206;
@@ -230,7 +230,7 @@
     .nav-link {
       position: relative;
       padding: 6px 18px;
-      color: #fff;
+      color: $stcolor;
       &:after {
         content: '';
         display: block;
@@ -238,7 +238,7 @@
         width: 0;
         bottom: 0;
         height: 2px;
-        background: #fff;
+        background: $stcolor;
         transition: width .25s ease-in;
         left: 50%;
         transform: translateX(-50%)
@@ -248,5 +248,8 @@
         width: 120%;
       }
     }
+  }
+  .st-user {
+    margin-right: 16px;
   }
 }

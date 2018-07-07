@@ -1,8 +1,12 @@
+
 @import '_var';
 @import '_extend';
 @import './_partial/_header';
 @import './_partial/_article';
 @import './_partial/_footer';
+@import './_partial/_login';
+@import './_partial/_cards';
+@import './_partial/_about';
 html,
 body,
 #app {
@@ -36,7 +40,7 @@ body {
 }
 
 .st-main {
-  margin-top: $header + 20px;
+  margin-top: $header;
   width: 100%;
   min-height: 100%;
   transition: margin .3s cubic-bezier(.17, .67, .83, .67);
@@ -72,20 +76,20 @@ body {
   li {
     animation: articleIn .2s ease-in-out;
     &:hover {
-      color: #000;
+      color: $stcolor;
       font-weight: 700;
     }
     &.actived {
       color: #fff;
       font-weight: 400;
-      border-color: #222;
-      background-color: #222;
+      border-color: $stcolor;
+      background-color: $stcolor;
     }
     padding: 0 12px;
     margin-right: 15px;
     margin-bottom: 16px;
     display: inline-block;
-    color: #333;
+    color: $stcolor;
     font-size: 14px;
     line-height: 28px;
     text-align: center;
@@ -105,4 +109,20 @@ body {
     overflow-y: auto;
     margin-right: -16px;
   }
+}
+// 重置at ui样式
+.at-btn--primary {
+    border-color: $stcolor;
+    background-color: $stcolor;
+    &:hover,
+    &:active {
+        border-color: lighten($stcolor, 6%);
+        background-color: lighten($stcolor, 6%);
+    }
+}
+.at-input--error {
+    .at-select__selection,
+    .at-input__original {
+        border-color: #FF4949;
+    }
 }

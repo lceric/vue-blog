@@ -2,6 +2,9 @@
 $support-for-ie:false;
 $vendor-prefixes:webkit moz ms official;
 
+$stbg: #fff;
+$stcolor: #387ce7;
+$stcolor: #2d383e;
 // Colors
 $color-default:#555;
 $color-grey:#999;
@@ -34,7 +37,7 @@ $line-height-title:1.1em;
 
 // Header
 $logo-size:40px;
-$header: 160px;
+$header: 80px;
 $subtitle-size:16px;
 $banner-height:350px;
 $banner-url:"../images/timg.jpg";
