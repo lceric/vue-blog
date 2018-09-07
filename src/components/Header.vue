@@ -25,13 +25,14 @@
         class="nav-link" :to="menu.path">{{menu.text}}</router-link>
     </nav>
     <div class="st-user">
-      <span>ChaoLee</span>
-      <router-link to="/login">登录</router-link>
+      <span v-if="userInfo">{{userInfo.username}}</span>
+      <router-link v-else to="/login">登录</router-link>
     </div>
   </header>
 </template>
 
 <script>
+import { getStorage } from '@/utils/storage.js'
 export default {
   data () {
     return {
@@ -48,7 +49,8 @@ export default {
       },
       isFixed: false,
       isHide: false,
-      isMain: false
+      isMain: false,
+      userInfo: null
     }
   },
   watch: {
@@ -59,6 +61,12 @@ export default {
       // }
       this.isFixed = val.name !== 'Main'
     }
+  },
+  created () {
+    const vm = this
+    let localUser = getStorage('userInfo')
+    console.info(localUser)
+    vm.userInfo = localUser
   },
   mounted () {
     const vm = this

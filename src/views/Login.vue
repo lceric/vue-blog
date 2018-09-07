@@ -1,25 +1,62 @@
 <template>
-  <div class="st-login st-main">
-    <at-input v-model="username" placeholder="请输入内容" prepend-button>
-      <template slot="prepend">
-        <i class="icon icon-search"></i>
-      </template>
-    </at-input>
-    <at-input v-model="password" placeholder="请输入内容" type="password" prepend-button>
-      <template slot="prepend">
-        <i class="icon icon-search"></i>
-      </template>
-    </at-input>
-    <at-button loading>登录</at-button>
+  <div class="st-main">
+    <div class="st-login">
+      <at-input class="login__form-item" v-model.trim="username" placeholder="登录名" prepend-button>
+        <template slot="prepend">
+          <i class="icon icon-user"></i>
+        </template>
+      </at-input>
+      <at-input class="login__form-item"
+        v-on:enter="loginHandler"
+        v-model.trim="password" placeholder="密码" type="password" prepend-button>
+        <template slot="prepend">
+          <i class="icon icon-lock"></i>
+        </template>
+      </at-input>
+      <at-button class="st-login__jump" circle :loading="loading"
+        icon="icon-log-in"
+        size="large"
+        @click="loginHandler"
+        :disabled="loading"></at-button>
+    </div>
   </div>
 </template>
 
 <script>
+import { login } from '@/api'
+import { setStorage } from '@/utils/storage.js'
+import md5 from 'js-md5'
 export default {
   data () {
     return {
       username: '',
-      password: ''
+      password: '',
+      loading: false
+    }
+  },
+  methods: {
+    loginHandler () {
+      const vm = this
+      vm.loading = true
+      if (vm.username !== '' && vm.password !== '') {
+        login({
+          username: vm.username,
+          password: md5(vm.password)
+        }).then(res => {
+          console.info(res)
+          vm.loading = false
+          setStorage('userInfo', res.data)
+          vm.$Message.success('登录成功!')
+          vm.$router.push('/')
+        }, () => {
+          // console.info(err.response)
+          vm.loading = false
+          // vm.$Message.warning(err.response.data.message)
+        })
+      } else {
+        vm.loading = false
+        vm.$Message.warning('用户名和密码不能为空！')
+      }
     }
   }
 }
