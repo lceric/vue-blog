@@ -1,4 +1,6 @@
 import axios from 'axios'
+import Vue from 'vue'
+const vm = new Vue()
 const IMG_SOURCE_SERVER = 'http://118.24.53.34:8888/upload/upload1.php'
 const instance = axios.create({
   baseURL: 'http://localhost:80/api'
@@ -8,6 +10,13 @@ const instance = axios.create({
   //   // 'Content-Type': 'application/json;charset=utf-8;'
   // }
 })
+instance.interceptors.response.use(function (response) {
+  return response
+}, function (error) {
+  vm.$Message.warning(error.response.data.message)
+  return Promise.reject(error)
+})
+
 // export default instance
 // 分页条件查询文章
 export function getArticleByPage (params) {
@@ -36,4 +45,11 @@ export function getMineInfo () {
 // 上传图片
 export function uploadImg (params) {
   return axios.post(IMG_SOURCE_SERVER, params)
+}
+// 登录
+export function login (params = {}) {
+  return instance.post(`/user/login`, {
+    type: 'login',
+    ...params
+  })
 }
