@@ -6,7 +6,8 @@
     * $vm 指为mavonEditor实例，可以通过如下两种方式获取
     * 1. 通过引入对象获取: `import {mavonEditor} from ...` 等方式引入后，`$vm`为`mavonEditor`
     * 2. 通过$refs获取: html声明ref : `<mavon-editor ref=md ></mavon-editor>，`$vm`为 `this.$refs.md`
-    */ -->{{articleIntro}}
+    */ -->
+    <!-- {{articleIntro}} -->
     <div class="st-modify__header">
       文章标题<at-input class="{'at-input--error': status.title}" v-model="modifyTitle" size="large" placeholder="请输入文章标题"></at-input>
     </div>
@@ -17,7 +18,6 @@
           v-for="(option, idx) in modifyClassifyOptions"
           :key="idx" :value="option.codekey">{{option.codelable}}</at-option>
       </at-select>
-      <at-button icon="icon-save" type="primary" @click="save">保存</at-button>
     </div>
     <mavon-editor class="mavon-editor" ref="md" @imgAdd="imgAdd" @imgDel="imgDel" :ishljs="true" v-model="value" />
   </div>
@@ -25,12 +25,15 @@
 
 <script>
 import axios from 'axios'
+import { getStorage } from '@/utils/storage.js'
+import EventBus from '@/utils/event.js'
 import { uploadImg, getType, insertArticle } from '@/api'
 // import qs from 'qs'
 export default {
   name: 'Modify',
   data () {
     return {
+      userInfo: null,
       modifyTitle: '',
       modifyClassify: '',
       modifyClassifyOptions: [],
@@ -48,18 +51,25 @@ export default {
   },
   created () {
     const vm = this
+    let localUser = getStorage('userInfo')
+    console.info(localUser)
+    vm.userInfo = localUser
+    EventBus.$on('on-save', function () {
+      vm.save()
+    })
     getType('ARTICLE_TYPE').then(res => {
       vm.modifyClassifyOptions = res.data
     })
   },
   methods: {
     imgAdd (pos, $file) {
+      const vm = this
       var formData = new FormData()
       formData.append('file', $file)
-      formData.append('userId', 'chaochaoA')
+      formData.append('userId', vm.userInfo.userid || 'unknownuserid')
+      formData.append('type', vm.modifyClassify || 'NEC')
       console.info('pos', $file)
       console.info('formData miniurl', formData)
-      const vm = this
       const $vm = vm.$refs.md
       // vm.$refs.md.$img2Url(pos, $file.miniurl)
       uploadImg(formData).then(res => {
@@ -104,6 +114,7 @@ export default {
       }
       insertArticle(params).then(res => {
         console.info(res)
+        vm.$router.push('/')
       }).catch(err => {
         console.info(err)
       })

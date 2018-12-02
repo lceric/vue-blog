@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div>
     <!-- <img src="./assets/logo.png"> -->
 
     <!-- /**
@@ -8,7 +8,7 @@
     * 2. 通过$refs获取: html声明ref : `<mavon-editor ref=md ></mavon-editor>，`$vm`为 `this.$refs.md`
     */ -->
     <!-- <router-view/> <--><button @click="remove">测试资源整理</button>
-    {{value}}
+    {{value}}sss
     <mavon-editor ref="md" @imgAdd="imgAdd" @imgDel="imgDel" :ishljs="true" v-model="value" />
   </div>
 </template>
@@ -32,7 +32,8 @@ export default {
       console.info('formData', formData)
       const vm = this
       const $vm = vm.$refs.md
-      const server = 'http://118.24.53.34/api/upload/upload1.php'
+      // const server = 'http://118.24.53.34/api/upload/upload1.php'
+      const server = 'http://localhost:80/api/upload/upload1.php'
       axios({
         url: server,
         method: 'post',
@@ -40,7 +41,7 @@ export default {
         headers: { 'Content-Type': 'multipart/form-data' }
       }).then((res) => {
         // 第二步.将返回的url替换到文本原位置![...](./0) -> ![...](url)
-        console.info(res.data.url)
+        console.info(res)
         if (res.data.code === 0) {
           $vm.$imgAddByUrl(pos, res.data.url)
           // vm.$refs.md.$refs.toolbar_left.$imgAddByFilename('./' + res.data.filename, $file)

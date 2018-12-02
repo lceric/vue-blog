@@ -20,7 +20,12 @@ body {
     font: $font-size $font-sans;
     -webkit-text-size-adjust: 100%;
 }
-
+a{
+    color: $color-link;
+    &:hover {
+        color: darken($color-link, 10%)
+    }
+}
 // .inner
 //   column(columns)
 .left,
@@ -109,6 +114,50 @@ body {
     overflow-y: auto;
     margin-right: -16px;
   }
+}
+.st-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    cursor: pointer;
+    box-shadow: 0 3px 10px rgba(0,0,0,.156863), 0 3px 10px rgba(0,0,0,.227451);
+}
+.st-button--float {
+    width: 56px;
+    height: 56px;
+    margin-bottom: 10px;
+    border-radius: 50%;
+    font-size: 20px;
+    transition: all 200ms ease;
+    background: #fff;
+    &:hover{
+        font-size: 28px;
+        transform: scale(1.2) rotate(90deg);
+    }
+}
+.st-modify__controller {
+    position: fixed;
+    bottom: 66px;
+    right: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 277;
+    .st-button__add {
+        background: lighten($color-facebook, 20%);
+        &:hover{
+            background: darken($color-facebook, 10%);
+        }
+    }
+    .st-button__save {
+        color: #787878;
+        // background: lighten($color-grey, 20%);
+        &:hover{
+            // background: darken($color-grey, 10%);
+        }
+    }
 }
 // 重置at ui样式
 .at-btn--primary {

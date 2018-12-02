@@ -4,7 +4,8 @@ $vendor-prefixes:webkit moz ms official;
 
 $stbg: #fff;
 $stcolor: #387ce7;
-$stcolor: #2d383e;
+$stcolor: #3b5998;
+// $stcolor: #2d383e;
 // Colors
 $color-default:#555;
 $color-grey:#999;
@@ -20,6 +21,7 @@ $color-twitter:#00aced;
 $color-facebook:#3b5998;
 $color-pinterest:#cb2027;
 $color-google:#dd4b39;
+$color-link: lighten($stcolor, 10%);
 
 // Fonts
 $font-sans:-apple-system, BlinkMacSystemFont,

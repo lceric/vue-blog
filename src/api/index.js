@@ -1,7 +1,8 @@
 import axios from 'axios'
 import Vue from 'vue'
 const vm = new Vue()
-const IMG_SOURCE_SERVER = 'http://118.24.53.34:8888/upload/upload1.php'
+// const IMG_SOURCE_SERVER = 'http://118.24.53.34:8888/upload/upload.php'
+const IMG_SOURCE_SERVER = 'http://localhost:80/upload/upload.php'
 const instance = axios.create({
   baseURL: 'http://localhost:80/api'
   // headers: {
