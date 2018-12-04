@@ -47,6 +47,12 @@ export default {
   computed: {
     articleIntro () {
       return this.value.substr(0, 60)
+    },
+    author () {
+      return this.userInfo.username
+    },
+    authorId () {
+      return this.userInfo.userid
     }
   },
   created () {
@@ -112,8 +118,10 @@ export default {
         content: vm.value,
         classify: vm.modifyClassify
       }
+      console.log(params)
       insertArticle(params).then(res => {
         console.info(res)
+        this.$Message.success(res.data.message)
         vm.$router.push('/')
       }).catch(err => {
         console.info(err)

@@ -25,18 +25,23 @@
         class="nav-link" :to="menu.path">{{menu.text}}</router-link>
     </nav>
     <div class="st-user">
-      <span v-if="userInfo">{{userInfo.username}}</span>
+      <at-dropdown v-if="userInfo" placement="bottom-right" @on-dropdown-command="handleCommand">
+        <at-button type="text">{{userInfo.username}} <i class="icon icon-chevron-down"></i></at-button>
+        <at-dropdown-menu slot="menu">
+          <at-dropdown-item name="quit">退出</at-dropdown-item>
+        </at-dropdown-menu>
+      </at-dropdown>
       <router-link v-else to="/login">登录</router-link>
     </div>
   </header>
 </template>
 
 <script>
-import { getStorage } from '@/utils/storage.js'
+import { getStorage, removeStorage } from '@/utils/storage.js'
 export default {
   data () {
     return {
-      subtitle: '坚持不住时，再坚持一下<br> Running will make me stronger',
+      subtitle: '坚持不住时，再坚持一下',
       menus: [{
         path: '/',
         text: '首页'
@@ -78,6 +83,16 @@ export default {
         }
       }
     })
+  },
+  methods: {
+    handleCommand (name) {
+      if (name === 'quit') {
+        console.log(name)
+        removeStorage('userInfo')
+        this.$router.push('/')
+        window.location.reload()
+      }
+    }
   }
 }
 </script>

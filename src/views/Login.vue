@@ -48,6 +48,7 @@ export default {
           setStorage('userInfo', res.data)
           vm.$Message.success('登录成功!')
           vm.$router.push('/')
+          window.location.reload()
         }, () => {
           // console.info(err.response)
           vm.loading = false
