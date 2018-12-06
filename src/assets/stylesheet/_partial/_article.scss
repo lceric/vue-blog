@@ -79,6 +79,16 @@
             margin-left: 12px;
         }
     }
+    .st-modify__intro {
+        display: flex;
+        margin-bottom: 20px;
+        align-items: center;
+        .at-textarea {
+            // width: 260px;
+            flex: 1;
+            margin-left: 12px;
+        }
+    }
     .mavon-editor {
         min-height: calc(100vh - 126px);
     }

@@ -19,6 +19,10 @@
           :key="idx" :value="option.codekey">{{option.codelable}}</at-option>
       </at-select>
     </div>
+    <div class="st-modify__intro">
+      文章简介
+      <at-textarea placeholder="填写文章简介信息" v-model="articleIntro"></at-textarea>
+    </div>
     <mavon-editor class="mavon-editor" ref="md" @imgAdd="imgAdd" @imgDel="imgDel" :ishljs="true" v-model="value" />
   </div>
 </template>
@@ -41,13 +45,14 @@ export default {
         title: false,
         classify: false
       },
-      value: ''
+      value: '',
+      articleIntro: ''
     }
   },
   computed: {
-    articleIntro () {
-      return this.value.substr(0, 60)
-    },
+    // articleIntro () {
+    //   return this.value.substr(0, 60)
+    // },
     author () {
       return this.userInfo.username
     },
@@ -58,7 +63,6 @@ export default {
   created () {
     const vm = this
     let localUser = getStorage('userInfo')
-    console.info(localUser)
     vm.userInfo = localUser
     EventBus.$on('on-save', function () {
       vm.save()
@@ -74,26 +78,28 @@ export default {
       formData.append('file', $file)
       formData.append('userId', vm.userInfo.userid || 'unknownuserid')
       formData.append('type', vm.modifyClassify || 'NEC')
-      console.info('pos', $file)
-      console.info('formData miniurl', formData)
       const $vm = vm.$refs.md
       // vm.$refs.md.$img2Url(pos, $file.miniurl)
       uploadImg(formData).then(res => {
         // 第二步.将返回的url替换到文本原位置![...](./0) -> ![...](url)
-        console.info(res.data.url)
-        if (res.data.code === 0) {
-          $vm.$imgAddByUrl(pos, res.data.url)
-          vm.$refs.md.$img2Url(pos, res.data.url)
-          vm.$refs.md.$refs.toolbar_left.$imgDelByFilename(pos)
+        if (res.data.code === 200 || res.data.code === 0) {
+          // $vm.$imgAddByUrl(pos, res.data.url)
+          $vm.$img2Url(pos, res.data.url)
+          // let imgList = $vm.$refs.toolbar_left.img_file
+          // let index = imgList.findIndex((img) => {
+          //   return img[1] === pos
+          // })
+          // // 解决连续删除错误的问题
+          // // 删除图片
+          // let delImg = imgList.splice(index, 1)[0]
+          // this.$refs.md.$refs.toolbar_left.$emit('imgDel', delImg)
+          // $vm.$imgDel([$file, pos])
         } else {
-          vm.$refs.md.$refs.toolbar_left.$imgDelByFilename(pos)
+          // vm.$refs.md.$refs.toolbar_left.$imgDelByFilename(pos)
         }
       })
     },
     imgDel (pos) {
-      // const vm = this
-      console.info(pos)
-      // vm.$refs.md.$refs.toolbar_left.$imgDelByFilename(pos)
     },
     remove () {
       var formData = new URLSearchParams()
@@ -118,14 +124,16 @@ export default {
         content: vm.value,
         classify: vm.modifyClassify
       }
-      console.log(params)
-      insertArticle(params).then(res => {
-        console.info(res)
-        this.$Message.success(res.data.message)
-        vm.$router.push('/')
-      }).catch(err => {
-        console.info(err)
-      })
+      if (params.title && params.content && params.classify && params.articleintro) {
+        insertArticle(params).then(res => {
+          this.$Message.success(res.data.message)
+          vm.$router.push('/')
+        }).catch(err => {
+          vm.$Message.error(err.data.message)
+        })
+      } else {
+        vm.$Message.warning('文章标题、简介、内容、类型均不能为空')
+      }
     }
   }
 }

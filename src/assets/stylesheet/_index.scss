@@ -159,6 +159,13 @@ a{
         }
     }
 }
+.mavon-editor {
+    .op-image {
+        .dropdown-item.dropdown-images {
+            display: none;
+        }
+    }
+}
 // 重置at ui样式
 .at-btn--primary {
     border-color: $stcolor;
