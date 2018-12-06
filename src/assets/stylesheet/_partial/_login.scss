@@ -1,0 +1,17 @@
+.st-login {
+  // margin-top: 120px;
+  margin: 30vh auto;
+  position: relative;
+  width: 260px;
+  .login__form-item {
+    margin-bottom: 12px;
+  }
+  .st-login__jump {
+    position: absolute;
+    right: -0px;
+    top: 8px;
+    width: 58px;
+    height: 58px;
+    border-width: 6px;
+  }
+}

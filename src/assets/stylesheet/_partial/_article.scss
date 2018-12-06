@@ -1,0 +1,98 @@
+.article-wrapper {
+    margin-top: 120px;
+    .article__header {
+        .article__title {
+            // text-align: left;
+            // font-family: Gotham-Book;
+            font-size: 28px;
+            color: #242f35;
+            margin: 1em 0 .5em;
+            font-weight: 400;
+            line-height: 1;
+        }
+        .mark__item {
+            margin-right: 16px;
+        }
+    }
+    
+    .article__editor {
+        margin-top: 3vh;
+        &.v-note-wrapper {
+            background: transparent;
+            z-index: 200;
+            .v-note-panel {
+                border: 0;
+                .v-note-show.single-show {
+                    flex: 1; // width: calc(100% - 250px);
+                    margin-right: 266px;
+                    @media screen and (max-width: 960px) {
+                        margin-right: 0;
+                    }
+                }
+                .v-note-navigation-wrapper {
+                    // flex: 1;
+                    margin-left: 16px;
+                    border: none; // position: fixed;
+                    background: transparent; // top: 100px;
+                    // right: 16px;
+                    @media screen and (max-width: 960px) {
+                        display: none;
+                    }
+                }
+                .v-note-navigation-close {
+                    display: none;
+                }
+            }
+        }
+        &.v-note-wrapper .v-note-panel .v-note-show .v-show-content,
+        &.v-note-wrapper .v-note-panel .v-note-show .v-show-content-html {
+            background: transparent;
+            padding: 0;
+        }
+    }
+    
+    .v-note-wrapper .v-note-panel .v-note-navigation-wrapper {
+        background: transparent;
+    }
+}
+
+.st-modify__wrapper {
+    margin-top: 60px;
+    padding: 20px;
+    .st-modify__header {
+        padding: 20px 0;
+        display: flex;
+        align-items: center;
+        .at-input {
+            flex: 1;
+            margin-left: 12px;
+            .at-input__original {height: 28px;
+            }
+        }
+    }
+    .st-modify__tag {
+        display: flex;
+        margin-bottom: 20px;
+        align-items: center;
+        .at-select {
+            width: 260px;
+            margin-left: 12px;
+        }
+    }
+    .st-modify__intro {
+        display: flex;
+        margin-bottom: 20px;
+        align-items: center;
+        .at-textarea {
+            // width: 260px;
+            flex: 1;
+            margin-left: 12px;
+        }
+    }
+    .mavon-editor {
+        min-height: calc(100vh - 126px);
+    }
+    .v-note-wrapper {
+        z-index: 200;
+    }
+}
