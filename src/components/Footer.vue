@@ -9,7 +9,7 @@
       </ul>
     </at-modal>
     <div class="st-wapper container-fluid flex flex-between">
-      <p class="footer__copyright">©2017 设计人生. 保留所有权利 陕ICP备17000202号</p>
+      <p class="footer__copyright">©2017 设计人生. 保留所有权利 <a target="_blank" href="http://www.beian.miit.gov.cn/">陕ICP备17000202号</a></p>
       <div class="footer__contact flex">
         <div class="contact__item">
           <i class="icon icon-github"></i>
