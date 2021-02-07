@@ -22,7 +22,7 @@ Vue.use(mavonEditor)
 
 Vue.config.productionTip = false
 
-global.codeStyle = 'atelier-seaside-light'
+global.codeStyle = 'github'
 
 /* eslint-disable no-new */
 new Vue({

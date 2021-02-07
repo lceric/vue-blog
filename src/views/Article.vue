@@ -17,15 +17,15 @@
         </div>
       </div>
     </header>
-    <mavon-editor class="article__editor" :value="value" :editable="false" :boxShadow="false"
-      navigation :codeStyle="codeStyle"
-      :subfield="false" :defaultOpen="'preview'" :toolbarsFlag="false"/>
+    <MarkdownPreview class="article__editor" :initialValue="value" :theme="codeStyle" isPreview></MarkdownPreview>
   </div>
 </template>
 
 <script>
+import { MarkdownPreview } from 'vue-meditor'
 import { getArticleById } from '@/api'
 export default {
+  components: { MarkdownPreview },
   data () {
     return {
       articleData: {},

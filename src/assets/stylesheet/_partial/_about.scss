@@ -12,6 +12,8 @@
 .about__wrapper {
   display: flex;
   padding-top: 60px;
+  // flex-direction: column;
+  // align-items: center;
 }
 .about__img {
   flex: 1;
@@ -26,7 +28,7 @@
   padding: 8px 58px;
   flex-direction: column;
   .info__row {
-    font-size: 16px;
+    font-size: 14px;
     // padding: 8px 28px;
     margin-bottom: 18px;
     line-height: 38px;

@@ -2,45 +2,49 @@
   {
     "data": [{
       "label": "名字",
-      "value": "李超 Eric",
+      "value": "Eric Lee",
+      "url": ""
+    }, {
+      "label": "职业",
+      "value": "前端开发工程师",
       "url": ""
     }, {
       "label": "年龄",
       "value": "1993.10",
       "url": ""
     }, {
-      "label": "职业",
-      "value": "前端开发",
+      "label": "毕业院校",
+      "value": "西安工业大学",
       "url": ""
     }, {
       "label": "Github",
-      "value": "ChaoLeer",
-      "url": "https://github.com/ChaoLeer"
+      "value": "https://github.com/lceric",
+      "url": "https://github.com/lceric"
     }, {
-      "label": "站点",
-      "value": "strun",
+      "label": "掘金",
+      "value": "https://juejin.cn/user/1626932939067102/posts",
+      "url": "https://juejin.cn/user/1626932939067102/posts"
+    }, {
+      "label": "语雀",
+      "value": "https://www.yuque.com/chaolee",
+      "url": "https://www.yuque.com/chaolee"
+    }, {
+      "label": "Blog",
+      "value": "https://strun.club",
       "url": "https://strun.club"
-    }, {
-      "label": "技能",
-      "value": "前端开发",
-      "url": ""
-    }, {
-      "label": "简介",
-      "value": "基于vue技术栈的前端基线版本开发，崇尚干净的代码，清晰地逻辑，优雅的设计",
-      "url": ""
     }],
     "author": {
       "avatar": "",
       "cover": {
-        "url": "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1528650258799&di=e76516dc74935ab00441d2e2f5e3dd29&imgtype=0&src=http%3A%2F%2Fimg.mp.itc.cn%2Fupload%2F20161103%2Fd8195318cd334f4db75fd2294f663beb_th.jpg",
-        "width": "280px",
-        "height": "200px",
-        "shape": "100px"
+        "url": "//strun.club/assets/images/avatar.jpeg",
+        "width": "180px",
+        "height": "180px",
+        "shape": "180px"
       }
     },
     "discription": [
-      "",
-      ""
+      "主<code>Vue.js</code>，熟悉Node.js，React，Webpack，了解PHP、MySQL、MongoDB、Docker。",
+      "责任心强，注重团队协作，致力于提升代码的整体结构规范及优化，探索追寻前端工程化的意义。<a href='https://strun.club/resume.html'>简历</a>"
     ]
   }
 ]

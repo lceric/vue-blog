@@ -1,5 +1,5 @@
 <template>
-  <div class="st-main">
+  <div class="st-main login">
     <div class="st-login">
       <at-input class="login__form-item" v-model.trim="username" placeholder="登录名" prepend-button>
         <template slot="prepend">
@@ -34,6 +34,12 @@ export default {
       loading: false
     }
   },
+  created () {
+    document.querySelector('.st-footer').style.display = 'none'
+  },
+  beforeDestroy () {
+    document.querySelector('.st-footer').style.display = 'block'
+  },
   methods: {
     loginHandler () {
       const vm = this
@@ -44,11 +50,11 @@ export default {
           password: md5(vm.password)
         }).then(res => {
           console.info(res)
-          vm.loading = false
           setStorage('userInfo', res.data)
+          vm.loading = false
           vm.$Message.success('登录成功!')
-          vm.$router.push('/')
-          window.location.reload()
+          vm.$router.replace('/')
+          // window.location.reload()
         }, () => {
           // console.info(err.response)
           vm.loading = false
