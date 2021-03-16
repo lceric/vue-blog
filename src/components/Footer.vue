@@ -9,7 +9,7 @@
       </ul>
     </at-modal>
     <div class="st-wapper container-fluid flex flex-between">
-      <p class="footer__copyright">©2017 设计人生. 保留所有权利 <a target="_blank" href="https://beian.miit.gov.cn/">陕ICP备17000202号-1</a></p>
+      <p class="footer__copyright">{{isOldSite ? '©2017 设计人生' : '@2021 学海札记'}}. 保留所有权利 <a target="_blank" href="https://beian.miit.gov.cn/">陕ICP备17000202号-{{isOldSite ? 1 : 2}}</a></p>
       <div class="footer__contact flex">
         <div class="contact__item">
           <i class="icon icon-github"></i>
@@ -28,10 +28,12 @@ export default {
     return {
       hlList: [],
       hlModel: false,
-      currentCodeStyle: global.codeStyle
+      currentCodeStyle: global.codeStyle,
+      isOldSite: false
     }
   },
   created () {
+    this.isOldSite = !window.location.host.match(/lceric\.com/)
     this.hlList = Object.keys(hlObj)
     this.currentCodeStyle = window.localStorage.getItem('hlcss') || global.codeStyle
   },

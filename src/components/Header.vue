@@ -41,7 +41,7 @@ import { getStorage, removeStorage } from '@/utils/storage.js'
 export default {
   data () {
     return {
-      subtitle: '坚持不住时，再坚持一下',
+      subtitle: 'Try to be Exellent',
       menus: [{
         path: '/',
         text: '首页'
@@ -70,7 +70,6 @@ export default {
   created () {
     const vm = this
     let localUser = getStorage('userInfo')
-    console.info(localUser)
     vm.userInfo = localUser
   },
   mounted () {
@@ -87,7 +86,6 @@ export default {
   methods: {
     handleCommand (name) {
       if (name === 'quit') {
-        console.log(name)
         removeStorage('userInfo')
         this.$router.push('/')
         window.location.reload()

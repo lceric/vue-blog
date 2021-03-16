@@ -30,13 +30,13 @@
       "url": "https://www.yuque.com/chaolee"
     }, {
       "label": "Blog",
-      "value": "https://strun.club",
-      "url": "https://strun.club"
+      "value": "https://lceric.com",
+      "url": "https://lceric.com"
     }],
     "author": {
       "avatar": "",
       "cover": {
-        "url": "//strun.club/assets/images/avatar.jpeg",
+        "url": "//lceric.com/assets/images/avatar.jpeg",
         "width": "180px",
         "height": "180px",
         "shape": "180px"
@@ -44,7 +44,7 @@
     },
     "discription": [
       "熟悉<code>Vue.js、Node.js、Webpack、ReactJS、Electron</code>，了解<code>PHP、MySQL、MongoDB、Docker</code>。",
-      "待人随和，责任心强，爱好技术，勤于实践，喜欢写一些工具来提升效率。注重团队协作，致力于提升代码的质量，共同进步，探索前端工程化的意义。<a href='https://strun.club/resume.html'>简历</a>"
+      "待人随和，责任心强，爱好技术，勤于实践，喜欢写一些工具来提升效率。注重团队协作，致力于提升代码的质量，共同进步，探索前端工程化的意义。<a href='https://lceric.com/resume.html'>简历</a>"
     ]
   }
 ]
