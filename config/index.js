@@ -11,12 +11,12 @@ module.exports = {
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
     proxyTable: {
-      '/api': {
+      '/blog-api': {
         target: 'https://lceric.com',
         ws: true,
         changeOrigin: true,
         pathRewrite: {
-          '^/api': '/api'
+          '^/blog-api': '/blog-api'
         }
       }
     },

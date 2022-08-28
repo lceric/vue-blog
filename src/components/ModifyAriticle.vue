@@ -32,8 +32,8 @@ export default {
       console.info('formData', formData)
       const vm = this
       const $vm = vm.$refs.md
-      // const server = 'http://118.24.53.34/api/upload/upload1.php'
-      const server = 'http://localhost:80/api/upload/upload1.php'
+      // const server = 'http://118.24.53.34/blog-api/upload/upload1.php'
+      const server = 'http://localhost:80/blog-api/upload/upload1.php'
       axios({
         url: server,
         method: 'post',

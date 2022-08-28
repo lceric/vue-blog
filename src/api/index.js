@@ -5,8 +5,8 @@ const vm = new Vue()
 const IMG_SOURCE_SERVER = '/upload/upload.php'
 // const IMG_SOURCE_SERVER = 'http://localhost:80/upload/upload.php'
 const instance = axios.create({
-  // baseURL: 'http://localhost:80/api'
-  baseURL: '/api'
+  // baseURL: 'http://localhost:80/blog-api'
+  baseURL: '/blog-api'
   // headers: {
   //   'USERID': 'b91aacd034c311e7bec600163e055a18'
   //   // 'Content-Type': 'application/json;charset=utf-8',
